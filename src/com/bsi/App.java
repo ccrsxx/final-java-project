@@ -6,13 +6,30 @@ import java.awt.event.ActionListener;
 
 public class App {
     private JPanel mainPanel;
-    private JButton buttonMessage;
+    private JButton sumButton;
+    private JLabel firstLabel;
+    private JLabel secondLabel;
+    private JTextField firstNumber;
+    private JTextField secondNumber;
+    private JButton resetButton;
+    private JLabel titlePanel;
+    private JLabel sumLabel;
+    private JLabel sumField;
 
     public App() {
-        buttonMessage.addActionListener(new ActionListener() {
+        sumButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null, "Hello World!");
+                final int first, second;
+
+                try {
+                    first = Integer.parseInt(App.this.firstNumber.getText());
+                    second = Integer.parseInt(App.this.secondNumber.getText());
+                    sumField.setText(String.valueOf(first + second));
+                } catch (NumberFormatException ex) {
+                    // add exception handling
+                    JOptionPane.showMessageDialog(App.this.mainPanel, "Please enter a valid number", "Error", JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
     }
