@@ -1,4 +1,4 @@
-package com.bsi;
+package com.finalproject;
 
 import javax.swing.*;
 
@@ -50,9 +50,9 @@ public class Calculator {
         // sumButton event listener, which will calculate the sum
         sumButton.addActionListener(e -> {
             // initialize all the needed variables
-            String selectedOperator = "";
-            int firstNumber, secondNumber;
-            int calculationResult = 0;
+            Character selectedOperator = null;
+            double firstNumber, secondNumber;
+            double calculationResult = 0;
 
             // check if any of the input fields is empty, if yes, show error message
             if (firstInput.getText().isEmpty() || secondInput.getText().isEmpty()) {
@@ -63,21 +63,21 @@ public class Calculator {
             // check if any of the operators is selected by looping through all the radio buttons
             for (JRadioButton operator : operators) {
                 if (operator.isSelected()) {
-                    selectedOperator = operator.getText();
+                    selectedOperator = operator.getText().charAt(0);
                     break;
                 }
             }
 
             // check if any of the operators is selected, if not, show error message
-            if (selectedOperator.isEmpty()) {
+            if (selectedOperator == null) {
                 showMessageError("Please select an operator");
                 return;
             }
 
             // check if the selected operator is valid int, if not, show error message
             try {
-                firstNumber = Integer.parseInt(firstInput.getText());
-                secondNumber = Integer.parseInt(secondInput.getText());
+                firstNumber = Float.parseFloat(firstInput.getText());
+                secondNumber = Float.parseFloat(secondInput.getText());
             } catch (NumberFormatException ex) {
                 showMessageError("Please enter a valid number");
                 return;
@@ -85,14 +85,14 @@ public class Calculator {
 
             // calculate the result based on the selected operator
             switch (selectedOperator) {
-                case "+" -> calculationResult = firstNumber + secondNumber;
-                case "-" -> calculationResult = firstNumber - secondNumber;
-                case "/" -> calculationResult = firstNumber / secondNumber;
-                case "*" -> calculationResult = firstNumber * secondNumber;
+                case '+' -> calculationResult = firstNumber + secondNumber;
+                case '-' -> calculationResult = firstNumber - secondNumber;
+                case '/' -> calculationResult = firstNumber / secondNumber;
+                case '*' -> calculationResult = firstNumber * secondNumber;
             }
 
-            // convert the result to string, add thousands separator and show it in the sumField
-            sumField.setText(String.format("%,d", calculationResult));
+            // convert the result to string and show it in the sumField
+            sumField.setText(String.valueOf(calculationResult));
         });
 
         // resetButton event listener, which will reset all the input fields and the sumField
@@ -109,7 +109,7 @@ public class Calculator {
 
     // main method to start the calculator
     public static void main(String[] args) {
-        JFrame frame = new JFrame("App");
+        JFrame frame = new JFrame("Calculator");
         frame.setContentPane(new Calculator().mainPanel);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
