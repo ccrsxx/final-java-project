@@ -40,8 +40,8 @@ public class Calculator {
         // group all the radio buttons, which are used to select the operator
         JRadioButton[] operators = {plusRadio, minusRadio, divideRadio, timesRadio};
 
-        for (JRadioButton radioButton : operators) {
-            operatorGroup.add(radioButton);
+        for (JRadioButton operator : operators) {
+            operatorGroup.add(operator);
         }
 
         // set all input fields to be disabled by default at the beginning
@@ -76,8 +76,8 @@ public class Calculator {
 
             // check if the selected operator is valid int, if not, show error message
             try {
-                firstNumber = Float.parseFloat(firstInput.getText());
-                secondNumber = Float.parseFloat(secondInput.getText());
+                firstNumber = Double.parseDouble(firstInput.getText());
+                secondNumber = Double.parseDouble(secondInput.getText());
             } catch (NumberFormatException ex) {
                 showMessageError("Please enter a valid number");
                 return;
