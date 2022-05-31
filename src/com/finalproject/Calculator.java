@@ -23,12 +23,12 @@ public class Calculator {
     private ButtonGroup operatorGroup;
 
     // a method to show message dialogs
-    void showMessageError(String message) {
+    private void showMessageError(String message) {
         JOptionPane.showMessageDialog(mainPanel, message, "Error", JOptionPane.ERROR_MESSAGE);
     }
 
     // a method to toggle all the inputs state
-    void toggleAllInputs(boolean state) {
+    private void toggleAllInputs(boolean state) {
         JComponent[] inputs = {firstInput, secondInput, plusRadio, minusRadio, divideRadio, timesRadio};
         for (JComponent input : inputs) {
             input.setEnabled(state);
