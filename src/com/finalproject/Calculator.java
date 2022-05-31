@@ -33,6 +33,7 @@ public class Calculator {
         for (JComponent input : inputs) {
             input.setEnabled(state);
         }
+        toggleActiveButton.setText("Turn " + (state ? "Off" : "On"));
     }
 
     // main calculator class
