@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Project;
+package com.finalproject;
 
 import javax.swing.*;
 import javax.swing.JOptionPane;
@@ -12,13 +12,13 @@ import javax.swing.JOptionPane;
  *
  * @author Basel
  */
-public class project1 extends javax.swing.JFrame {
+public class Form extends javax.swing.JFrame {
 
     /**
-     * Creates new form project1
+     * Creates new form Form
      */
-    
-    public project1() {
+
+    public Form() {
         initComponents();
         buttonInput(false);
     }
@@ -459,33 +459,33 @@ public class project1 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private void txtNimActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void txtNimActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                      
+    }
 
-    private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void txtNamaActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                       
+    }
 
-    private void txtTugasActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void txtTugasActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                        
+    }
 
-    private void txtKelasActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void txtKelasActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                        
+    }
 
-    private void txtQuizActionPerformed(java.awt.event.ActionEvent evt) {                                        
+    private void txtQuizActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                       
+    }
 
-    private void txtUjianActionPerformed(java.awt.event.ActionEvent evt) {                                         
+    private void txtUjianActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                        
+    }
 
-    private void rLakiActionPerformed(java.awt.event.ActionEvent evt) {                                      
+    private void rLakiActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-    }                                     
+    }
 
     public void buttonInput(boolean state) {
         JComponent[] inputs = {txtKelas, txtNama, txtNim, txtQuiz, txtTugas, txtUjian};
@@ -494,7 +494,7 @@ public class project1 extends javax.swing.JFrame {
         }
         turnOn.setText("Turn " + (state ? "Off" : "On"));
     }
-    
+
      public void reset() {
         // group semua input dan label
         JTextField [] components = {txtKelas, txtNama, txtNim, txtQuiz, txtTugas, txtUjian};
@@ -508,10 +508,10 @@ public class project1 extends javax.swing.JFrame {
             label.setText("");
         }
     }
-    
-    
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {                                               
-        
+
+
+    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {
+
          // deklarasi variabel
         int nim = 0;
         double nt = 0;
@@ -554,8 +554,8 @@ public class project1 extends javax.swing.JFrame {
         } else if (rPerempuan.isSelected()) {
             cJKelamin.setText("Perempuan");
         }
-        
-        
+
+
         //Menentukan Keterangan
         if(rata >= 70 ){
         cKet.setText("LULUS !");
@@ -570,104 +570,25 @@ public class project1 extends javax.swing.JFrame {
         cNQuiz.setText(Double.toString(nq));
         cNUjian.setText(Double.toString(nu));
         cAkhir.setText(Double.toString(rata));
-       
-//       //catch Error
-//        try {
-//       //Deklarasi Variabel
-//       String nama= txtNama.getText();
-//       String nim = txtNim.getText();
-//       String kelas = txtKelas.getText();
-//      
-//       // is Empty ?? true : false;
-//       if (nama.isEmpty()|| nim.isEmpty() ||kelas.isEmpty() || 
-//           txtTugas.getText().isEmpty() || txtQuiz.getText().isEmpty()|| 
-//           txtUjian.getText().isEmpty()){ 
-//       JOptionPane.showMessageDialog(null," FORM is Empty");
-//       reset();
-//       }
-//       else {
-//       //Deklarasi Variabel
-//       Double nt = Double.parseDouble(txtTugas.getText());
-//       Double nq = Double.parseDouble(txtQuiz.getText()) ;
-//       Double nu = Double.parseDouble(txtUjian.getText()) ;
-//       Double rata = (nu+nt+nq)/3;
-//           //Cetak Nama
-//       cNama.setText(nama);
-//       //Cetak Jenis Kelamin
-//       if (rLaki.isSelected()){
-//       cJKelamin.setText("Laki-laki");
-//       } else {
-//       cJKelamin.setText("Perempuan");
-//       }
-//       //Cetak NIM
-//       cNim.setText(nim);
-//       //cetak Kelas
-//       cKelas.setText(kelas);
-//       //cetak Nilai Tugas
-//       cNTugas.setText(Double.toString(nt));
-//       //cetak Niali Quiz
-//       cNQuiz.setText(Double.toString(nq));
-//       //cetak Nilai Ulangan
-//       cNUjian.setText(Double.toString(nu));
-//       //Cetak Nilai Akhir 
-//       cAkhir.setText(Double.toString(rata));
-//
-//       }
-//       
-//            
-//               } catch (Exception e) {
-//            JOptionPane.showMessageDialog(null, "Terdapat Kesalahan Mengisi FORM");
-//            reset();
-//        }
-//       
-    }                                              
+    }
 
-//    public void buttonInput(boolean active) {
-//        JComponent[] inputs = {txtKelas,txtNama,txtNim,txtQuiz,txtTugas,txtUjian};
-//        for (JComponent input : inputs){
-//        input.setEnabled(active);
-//        };
-//        
-//    }
-//    public  void reset(){
-//    txtKelas.setText("");
-//        txtNama.setText("");
-//        txtNim.setText("");
-//        txtQuiz.setText("");
-//        txtTugas.setText("");
-//        txtUjian.setText("");
-//       
-//        
-//                
-//        cNama.setText("");
-//        cJKelamin.setText("");
-//        cNim.setText("");
-//        cKelas.setText("");
-//        cNTugas.setText("");
-//        cNUjian.setText("");
-//        cNQuiz.setText("");
-//        cAkhir.setText("");
-//    }
-//    
-//    
-//    
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {
         reset();
-    }                                              
+    }
 
-    private void jPanel2AncestorAdded(javax.swing.event.AncestorEvent evt) {                                      
+    private void jPanel2AncestorAdded(javax.swing.event.AncestorEvent evt) {
         // TODO add your handling code here:
-    }                                     
+    }
 
-    private void turnOnActionPerformed(java.awt.event.ActionEvent evt) {                                       
+    private void turnOnActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
-        buttonInput(true);
-    }                                      
+        buttonInput(!txtNama.isEnabled());
+    }
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {                                               
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
         dispose();
-    }                                              
+    }
 
     /**
      * @param args the command line arguments
@@ -676,7 +597,7 @@ public class project1 extends javax.swing.JFrame {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -686,27 +607,27 @@ public class project1 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(project1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(project1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(project1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(project1.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Form.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new project1().setVisible(true);
-                new project1().buttonInput(false);
-                
+                new Form().setVisible(true);
+                new Form().buttonInput(false);
+
             }
         });
     }
 
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify
     private javax.swing.ButtonGroup buttonGroup;
     private javax.swing.JLabel cAkhir;
     private javax.swing.JLabel cJKelamin;
@@ -750,5 +671,5 @@ public class project1 extends javax.swing.JFrame {
     private javax.swing.JTextField txtQuiz;
     private javax.swing.JTextField txtTugas;
     private javax.swing.JTextField txtUjian;
-    // End of variables declaration                   
+    // End of variables declaration
 }
